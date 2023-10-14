@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,600;1,700;1,800&family=Roboto:wght@100&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Poppins:ital,wght@0,400;0,500;1,600;1,700;1,800&family=Roboto:wght@100&family=Satisfy&display=swap');
+
+/*
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Satisfy', cursive;
+font-family: 'Gloock', serif;*/
+
+
+
+body {
+   margin: 100;
+   background: rgb(231, 229, 229);
+   overflow: hidden;
+   background-image: url('Imagenes/fondo.jpg'); 
+   background-size: cover; 
+   background-repeat: no-repeat;
+}
+body {
+   margin: 0;
+   padding: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background-color: #f0f0f0;
+}
+
+
+#wrapper {
+   height: 90vh;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-evenly;
+}
+
+#game {
+   height: 150vh;
+   max-height: 700px;
+   display: flex;
+   flex-wrap:wrap;
+   align-items: center;
+   justify-content: center;
+   margin-top: 100px; /* Ajusta el valor según sea necesario para mover las cartas hacia abajo */
+}
+
+
+#stats {
+   color: rgb(19, 67, 136);
+   font-family: 'Gloock', serif;
+   position: absolute;
+   padding: 1rem;
+   text-align: center;
+   width: calc(100% - 2rem);
+   font-size: 3rem;
+   z-index: 1; /* Añade esta línea para asegurarte de que el marcador esté en el frente */
+   top: 10px; /* Ajusta este valor para cambiar la posición vertical */
+}
+
+
+.card {
+   width: 100px;
+   height: 140px;
+   margin: 1rem;
+   position: relative;
+   transition: transform 0.5s;
+   transform-style: preserve-3d;
+}
+
+.card.active {
+   transform: rotateY(150deg);
+}
+
+.card div {
+   width: 100%;
+   height: 100%;
+   border-radius: 1rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: absolute;
+   backface-visibility: hidden;
+   pointer-events: none;
+}
+
+.card .face {
+   background: #d9dedf;
+   transform: rotateY( 180deg );
+   color: black;
+   font-size: 6rem;
+}
+
+.card .back {
+   border: none; /* Eliminamos el borde */
+   background: url(Imagenes/) center / cover no-repeat; /* Ajusta la ruta de tu imagen de reverso */
+}
+
+
+
+.card.active .face img {
+   transform: scale(0.2);
+   transition: transform 0.6s;
+}
+
+footer {
+   background-color: #72dee2;
+   color: #000000;
+   text-align:center;
+   padding: 1px;
+   position: fixed;
+   bottom: 10PX;
+   width: 25%;
+}
